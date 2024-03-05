@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h3>Events demo</h3>
+    <ul id="images">
+        <li id="first" >First Value</li>  
+        <!-- onclick="alert('First clicked')" above old approach -->
+        <li id="second"> Second value</li>
+    </ul>
+
+    <script>
+        // document.getElementById('first').onclick=()=>{
+        //     alert("using js clicked");
+        // }
+
+        // // Using events proper way
+        // document.getElementById('second').addEventListener('click',()=>{
+        //     alert("Clicked using event listener")
+        // })
+
+        //Removing element from document when clicked
+
+        document.querySelector('#images').addEventListener('click',(e)=>{
+            console.log(e);
+            // let rem=e.target;//This will remove only one li
+            let rem=e.target.parentNode;
+            // console.log(rem);
+            rem.remove();
+        },false)//Third parameter is of propagation that is to bubbling up nd all defayult=false
+    </script>
+</body>
+</html>

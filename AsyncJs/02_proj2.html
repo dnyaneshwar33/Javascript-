@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval</title>
+</head>
+<body>
+    <h1>Chai Aur JS</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+    <script>
+
+        //Small proj that start and stop values on clicking buttons
+    //    const setInt= setInterval(function(){
+    //         console.log("Demo of SetInterval")
+    //     },1000)
+        let intervalId;
+
+         const printValue=function(){
+            console.log("This is great way")
+         }
+
+        document.querySelector('#start').addEventListener('click',()=>{
+            intervalId= setInterval(printValue,1000);
+
+        })
+        document.querySelector('#stop').addEventListener('click',()=>{
+            clearInterval(intervalId);
+            console.log("Stopped the setInterval")
+        })
+
+    
+        
+
+    //   clearInterval(setInt);
+    </script>
+
+</body>
+</html>

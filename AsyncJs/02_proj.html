@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proj on async</title>
+</head>
+<body>
+    <h1>THIS IS JS LEARNING</h1>
+    <button id="btn">STOP</button>
+    
+    <script>
+        setTimeout(function(){
+            console.log("THis is demo")
+        },2000)//Will print this after 2 sec;
+
+        const changeText=document.querySelector("h1");
+        // setTimeout(()=>{
+        //     changeText.innerHTML="The lerning is great";
+        // },2000)
+
+        //Another way to do this task
+        const changeText2=function(){
+            document.querySelector('h1').innerHTML="Change made using function";
+        }
+        const ChangeMe=setTimeout(changeText2,3000);
+
+        //This will to remove interval
+        //Another way to cleartimeout using btn
+
+        document.querySelector('#btn').addEventListener('click',()=>{
+            clearTimeout(ChangeMe)
+            console.log("STOPPED")
+        })
+    </script>
+</body>
+</html>
